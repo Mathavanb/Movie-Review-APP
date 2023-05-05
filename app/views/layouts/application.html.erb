@@ -11,7 +11,7 @@
         </form>
 
         <nav class="navbar">
-          <a class="navbar-brand" href="http://127.0.0.1:3000/"><div class="text-center font-pacifico">
+          <a class="navbar-brand" href="https://mymovie-fdng.onrender.com/"><div class="text-center font-pacifico">
             <h1 style="position: absolute;left: 600px;top:-11px;color: #fffffff0">My Movie</h1>
           </div></a>
         </nav>
@@ -34,7 +34,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1:3000/profiles"><% if current_user.avatar.attached? %>
+              <a class="nav-link" href="https://mymovie-fdng.onrender.com/profiles"><% if current_user.avatar.attached? %>
                   <%= image_tag current_user.avatar,size:'50x50',style: "Border-radius: 50%;position: absolute;right: 30px;padding:3px;top:6px;"%>
                 <% else %>
                   <%= link_to 'Profile Pg', profiles_path,class:"btn btn-outline-dark",style:"color:white;position: absolute;right: 20px;padding:3px;top:15px;font-size: 14px;" %>
