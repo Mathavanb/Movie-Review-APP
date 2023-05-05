@@ -22,22 +22,22 @@
 
 
             <li class="nav-item" >
-              <%= link_to 'Log Out', destroy_user_session_path,class:"btn btn-outline-dark", method: :delete,style:"position: absolute;right:269px;padding:3px;top:15px;font-size: 14px;"  %>
+              <%= link_to 'Log Out', destroy_user_session_path,class:"btn btn-outline-light", method: :delete,style:"color:white;position: absolute;right:269px;padding:3px;top:15px;font-size: 14px;"  %>
             </li>
 
             <li class="nav-item" >
-              <%= link_to 'Edit Profile', edit_user_registration_path,class: "btn btn-outline-dark",style:"position: absolute;right: 180px;padding:3px;top:15px;font-size: 14px;" %>
+              <%= link_to 'Edit Profile', edit_user_registration_path,class: "btn btn-outline-dark",style:"color:white;position: absolute;right: 180px;padding:3px;top:15px;font-size: 14px;" %>
             </li>
 
             <li class="nav-item" >
-              <%= link_to 'Add Movie', new_homepg_path,class: "btn btn-outline-dark",style:"position: absolute;right: 95px;padding:3px;top:15px;font-size: 14px;" %>
+              <%= link_to 'Add Movie', new_homepg_path,class: "btn btn-outline-dark",style:"color:white;position: absolute;right: 95px;padding:3px;top:15px;font-size: 14px;" %>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" href="http://127.0.0.1:3000/profiles"><% if current_user.avatar.attached? %>
                   <%= image_tag current_user.avatar,size:'50x50',style: "Border-radius: 50%;position: absolute;right: 30px;padding:3px;top:6px;"%>
                 <% else %>
-                  <%= link_to 'Profile Pg', profiles_path,class:"btn btn-outline-dark",style:"position: absolute;right: 20px;padding:3px;top:15px;font-size: 14px;" %>
+                  <%= link_to 'Profile Pg', profiles_path,class:"btn btn-outline-dark",style:"color:white;position: absolute;right: 20px;padding:3px;top:15px;font-size: 14px;" %>
                 <% end %></a>
             </li></ul></div></div>
     </nav>
@@ -53,7 +53,7 @@
         </form>
 
         <nav class="navbar">
-          <a class="navbar-brand" href="http://127.0.0.1:3000/"><div class="text-center font-pacifico">
+          <a class="navbar-brand" href="https://mymovie-fdng.onrender.com/"><div class="text-center font-pacifico">
             <h1 style="position: absolute;left: 600px;top:-11px;color: #fffffff0">My Movie</h1>
           </div></a>
         </nav>
@@ -63,15 +63,15 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
             <li class="nav-item" >
-              <%= link_to 'Add Movies', new_homepg_path,class: "btn btn-outline-dark",style:"position: absolute;right: 180px;padding:3px;top:15px;font-size: 14px;" %>
+              <%= link_to 'Add Movies', new_homepg_path,class: "btn btn-outline-dark",style:"position: absolute;right: 180px;padding:3px;top:15px;color:white;font-size: 14px;" %>
             </li>
 
             <li class="nav-item" >
-              <%= link_to 'Sign Up', new_user_registration_path,class: "btn btn-outline-dark",style:"position: absolute;right: 95px;padding:3px;top:15px;font-size: 14px;" %>
+              <%= link_to 'Sign Up', new_user_registration_path,class: "btn btn-outline-dark",style:"position: absolute;color:white;right: 95px;padding:3px;top:15px;font-size: 14px;" %>
             </li>
 
             <li class="nav-item" >
-              <%= link_to 'Log In', new_user_session_path,class:"btn btn-outline-dark",style:"position: absolute;right: 20px;padding:3px;top:15px;font-size: 14px;" %>
+              <%= link_to 'Log In', new_user_session_path,class:"btn btn-outline-dark",style:"position: absolute;color:white;right: 20px;padding:3px;top:15px;font-size: 14px;" %>
             </li>
 
             </ul></div></div>
