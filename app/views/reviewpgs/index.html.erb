@@ -1,0 +1,68 @@
+<% if notice %>
+  <p id="notice" class="alert alert-success" role="alert"><%= notice %></p>
+  <script>
+      setTimeout(function() {
+          document.getElementById("notice").remove();
+      }, 5000); // remove after 5 seconds (5000 milliseconds)
+  </script>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <h1><%= @homepg.movie_name %></h1>
+  </div><br>
+
+  <%= video_tag (url_for(@homepg.video)),controls:'' ,style:"padding-left: 200px;"%><br><br><br>
+
+  <strong style="padding-left: 92px">About the Movie :- </strong>
+  <%= @homepg.description %><br><br><br>
+  <h2>Reviews</h2>
+</div><br>
+
+
+<div class="container">
+  <div class="row">
+    <% if @homepg.reviewpgs.length > 0 %>
+      <% @homepg.reviewpgs.each do |cmt| %>
+        <ul>
+          <li>
+            <% if cmt.user %>
+              <p><strong>User :</strong><%= cmt.user.email %></p>
+            <% end %>
+            <p><strong>Review :</strong><%= cmt.review %></p>
+            <p><strong>Rating :</strong><%= cmt.rating %></p>
+            <p><%= link_to 'Edit Comment', edit_homepg_reviewpg_path(@homepg, cmt),class:"btn btn-outline-primary",style:"font-size: 12px;" %></p>
+            <p><%= link_to 'Delete Comments', homepg_reviewpg_path(@homepg, cmt), method: :delete, data: { confirm: 'Are you sure?...' },class:"btn btn-outline-dark",style:"font-size: 12px;" %></p>
+          </li>
+        </ul>
+      <% end %>
+    <% else %>
+      No comments yet
+    <% end %>
+  </div><br>
+  <h2>Add Reviews</h2><br>
+</div>
+
+<div class="container">
+  <div class="row">
+    <%= form_with(model: [@homepg,@reviewpg.build]) do |f| %>
+      <p style="padding-left: 30px;">
+        <strong><%= f.label :review,'Reviews :- ' %></strong><br>
+        <%= f.text_area :review,style:"height: 100px;width: 252px;" %>
+      </p><br>
+
+      <p><strong style="padding-left: 31px">Ratings :- </strong></p>
+      <div  style="margin: 15px;padding-left: 21px">
+        <%= f.radio_button :rating, 1 %>  <%= f.label :one,'1⭐',:value=> 1,:style => "display: inline-block;" %>
+        <%= f.radio_button :rating, 2 %>  <%= f.label :two,'2⭐',:value=> 2,:style => "display: inline-block;" %>
+        <%= f.radio_button :rating, 3 %>  <%= f.label :three,'3⭐',:value=> 3,:style => "display: inline-block;" %>
+        <%= f.radio_button :rating, 4 %>  <%= f.label :four,'4⭐',:value=> 4,:style => "display: inline-block;" %>
+        <%= f.radio_button :rating, 5 %>  <%= f.label :five,'5⭐',:value=> 5,:style => "display: inline-block;" %>
+      </div>
+      <p style="padding-left: 31px">
+        <%= f.submit 'Upload' ,class:"btn btn-outline-primary",style:"font-size: 12px;"  %><br><br>
+        <%= link_to 'Back', homepgs_path,class:"btn btn-outline-dark",style:"font-size: 12px;"  %>
+      </p>
+    <%end %>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name),style:"font-size: 12px;position: absolute;
+    right: 25;" , class:"btn btn-link"  %><br />
+<% end %><br><br>
+

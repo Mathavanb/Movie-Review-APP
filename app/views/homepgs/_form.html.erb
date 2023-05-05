@@ -1,0 +1,42 @@
+<%= form_with(model: homepg) do |form| %>
+  <% if homepg.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(homepg.errors.count, "error") %> prohibited this homepg from being saved:</h2>
+
+      <ul>
+        <% homepg.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" style="padding-left: 90px;">
+    <strong><%= form.label :movie_name, 'Movie Name :- ' %></strong><br>
+    <%= form.text_field :movie_name %>
+  </div>
+
+  <div class="field" style="padding-left: 90px;">
+    <strong><%= form.label :release_date, 'Release Date :- ' %></strong><br>
+    <%= form.date_field :release_date %>
+  </div>
+
+  <div class="field" style="padding-left: 90px;">
+    <strong><%= form.label :image, 'Image :- ' %></strong><br>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field" style="padding-left: 90px;">
+    <strong><%= form.label :video, 'Promo Video :- ' %></strong><br>
+    <%= form.file_field :video %>
+  </div>
+
+  <div class="field" style="padding-left: 90px;">
+    <strong><%= form.label :description, 'Description :- ' %></strong><br>
+    <%= form.text_area :description,style:"height: 150px;width: 340px;"%>
+  </div><br>
+
+  <div class="actions" style="padding-left: 90px;">
+    <%= form.submit 'Upload',class:"btn btn-outline-dark",style:"font-size: 16px;" %>
+  </div>
+<% end %>

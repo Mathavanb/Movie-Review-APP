@@ -1,0 +1,43 @@
+<br>
+<div class="container">
+  <h2>Edit Your Review</h2><br>
+  <div class="row">
+
+    <%= form_with(model: [@homepg,@reviewpg]) do |form| %>
+      <% if @reviewpg.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@reviewpg.errors.count, "error") %> prohibited this reviewpg from being saved:</h2>
+
+          <ul>
+            <% @reviewpg.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <p style="padding-left: 30px;">
+        <strong><%= form.label :review,'Reviews :- ' %></strong><br>
+        <%= form.text_area :review,style:"height: 100px;width: 252px;" %>
+      </p><br>
+
+      <p><strong style="padding-left: 31px">Ratings :- </strong></p>
+      <div  style="margin: 15px;padding-left: 21px">
+        <%= form.radio_button :rating, 1 %>  <%= form.label :one,'1⭐',:value=> 1,:style => "display: inline-block;" %>
+        <%= form.radio_button :rating, 2 %>  <%= form.label :two,'2⭐',:value=> 2,:style => "display: inline-block;" %>
+        <%= form.radio_button :rating, 3 %>  <%= form.label :three,'3⭐',:value=> 3,:style => "display: inline-block;" %>
+        <%= form.radio_button :rating, 4 %>  <%= form.label :four,'4⭐',:value=> 4,:style => "display: inline-block;" %>
+        <%= form.radio_button :rating, 5 %>  <%= form.label :five,'5⭐',:value=> 5,:style => "display: inline-block;" %>
+      </div>
+
+      <p style="padding-left: 32px"><strong >Homepg_id :- </strong><br>
+        <%= form.text_field :homepg_id %></p><br>
+
+      <div class="actions" style="padding-left: 31px">
+        <%= form.submit 'Update Review',class:"btn btn-outline-primary",style:"font-size: 16px;"  %><br><br>
+        <%= link_to 'Back', :back,class:"btn btn-outline-dark",style:"font-size: 12px;"  %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<% if notice %>
+  <p id="notice" class="alert alert-success" role="alert"><%= notice %></p>
+  <script>
+      setTimeout(function() {
+          document.getElementById("notice").remove();
+      }, 5000); // remove after 5 seconds (5000 milliseconds)
+  </script>
+<% end %>
+
+
+<p>
+  <strong>Review:</strong>
+  <%= @reviewpg.review %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @reviewpg.rating %>
+</p>
+
+<p>
+  <strong>Homepg:</strong>
+  <%= @reviewpg.homepg_id %>
+</p>
+
+<%= link_to 'Edit', edit_reviewpg_path(@reviewpg) %> |
+<%= link_to 'Back', reviewpgs_path %>

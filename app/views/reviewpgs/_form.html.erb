@@ -1,0 +1,32 @@
+<%= form_with(model: [@homepg,@reviewpg]) do |form| %>
+  <% if reviewpg.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reviewpg.errors.count, "error") %> prohibited this reviewpg from being saved:</h2>
+
+      <ul>
+        <% reviewpg.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :review %>
+    <%= form.text_area :review %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :homepg_id %>
+    <%= form.text_field :homepg_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

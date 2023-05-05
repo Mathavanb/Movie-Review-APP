@@ -1,0 +1,20 @@
+
+<br>
+<h1 style="font-family: Poppins-Bold;font-size: 39px;color: #333;text-align: center;">User Profile</h1>
+<hr>
+<br>
+
+
+<div class="container">
+    <b>E-mail: </b>
+    <%= current_user.email %><br><br>
+    <b>Image: </b><br><br>
+    <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar,size:'100x100' %>
+    <% else %>
+      No Image Available!!
+    <% end %><br><br><br>
+  <%= link_to 'Edit', edit_user_registration_path,class:"btn btn-outline-primary",style:"border-width: 1px;padding: 0px;width: 70px;font-size: 12px;" %> |
+  <%= link_to 'Log Out', destroy_user_session_path,class:"btn btn-outline-primary",style:"border-width: 1px;padding: 0px;width: 110px;font-size: 12px;", method: :delete %> |
+  <%= link_to 'Back', homepgs_path,class:"btn btn-outline-primary",style:"border-width: 1px;padding: 0px;width: 70px;font-size: 12px;" %>
+</div>

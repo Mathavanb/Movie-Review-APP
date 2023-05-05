@@ -1,0 +1,43 @@
+
+<br>
+<div class="container">
+  <h2>Sign up</h2><br>
+
+  <div style="padding-left: 31px">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <strong><%= f.label :email,'E-mail :- '%></strong><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <strong><%= f.label :password,'Password :- ' %></strong>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <strong><%= f.label :password_confirmation,'Password Confirmation :- ' %></strong><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div>
+        <div class="mb-3">
+          <strong><%= f.label :Image,'Image :- ',class:"form-label" %><br></strong>
+          <%= f.file_field :avatar %>
+        </div>
+      </div><br>
+
+      <div class="actions">
+        <%= f.submit "Sign up",class:"btn btn-outline-primary",style:"font-size: 16px;"  %>
+      </div>
+    <% end %>
+
+    <%= link_to 'Back', :back,class:"btn btn-outline-dark",style:"font-size: 12px;"  %> | <%= render "users/shared/links" %>
+  </div>
+
+</div>
