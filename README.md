@@ -246,12 +246,3 @@ This Movie App backend serves as a strong foundation for:
 - Scalable movie review apps
 - API-driven applications
 
-If you want: 
-- API Documentation
-- Swagger UI Integration
-- Frontend UI
-- Postman Collection
-- ER Diagram
-
-Just ask! 🚀
-
